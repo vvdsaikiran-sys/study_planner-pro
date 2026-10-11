@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📚 Study Planner Pro</h1>
+
+    <h2>Dashboard</h2>
+
+    <h3 id="stats">
+        Total: 0 | Completed: 0 | Pending: 0
+    </h3>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Task..."
+    >
+
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter Study Task"
+    >
+
+    <select id="priority">
+        <option>High</option>
+        <option selected>Medium</option>
+        <option>Low</option>
+    </select>
+    <input type="date" id="dueDate">   
+
+    <button id="addButton">Add Task</button>
+    <button id="clearCompletedBtn">Clear Completed</button>
+
+    <br><br>
+
+    <ul id="taskList"></ul>
+
+    <br>
+    <a href="about.html">
+    <button>About</button>
+    </a>
+
+    <button id="logoutBtn">Logout</button>
+    <button onclick="openChat()">🤖 Open AI Assistant</button>
+
+</div>
+
+<div id="chatContainer" style="
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 450px;
+height: 550px;
+background: white;
+border: 1px solid #ccc;
+border-radius: 15px;
+padding: 15px;
+box-shadow: 0 0 20px rgba(0,0,0,0.3);
+z-index: 1000;
+display:none;
+">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+    <h3 style="margin:0;">🤖 AI Study Assistant</h3>
+
+    <button onclick="closeChat()" style="
+        background:red;
+        color:white;
+        border:none;
+        border-radius:5px;
+        padding:5px 10px;
+        cursor:pointer;
+    ">
+        ✖
+    </button>
+    
+</div>
+    <div id="chatMessages" style="height:250px;overflow-y:auto;border:1px solid #ddd;padding:5px;margin-bottom:10px;"></div>
+
+    <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask anything..."
+        style="width:100%;padding:8px;"
+    >
+
+    <br><br>
+
+    <button onclick="sendMessage()">Send</button>
+
+</div>
+<script src="dashboard.js"></script>
+
+</body>
+</html>
